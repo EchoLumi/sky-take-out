@@ -69,6 +69,7 @@ public class EmployeeController {
      * @return
      */
     @PostMapping("/logout")
+    @ApiOperation("员工退出")
     public Result<String> logout() {
         return Result.success();
     }
@@ -78,7 +79,7 @@ public class EmployeeController {
      * @param employeeDTO
      * @return
      */
-    @RequestMapping
+    @RequestMapping()
     @ApiOperation("新增员工")
     public Result save(@RequestBody EmployeeDTO employeeDTO){
         log.info("新增员工: {}",employeeDTO);
