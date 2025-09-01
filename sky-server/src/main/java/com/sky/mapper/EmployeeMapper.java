@@ -19,7 +19,7 @@ public interface EmployeeMapper {
     Employee getByUsername(String username);
 
     /**
-     * 插入员工数据
+     * 插入员工数据到数据库中
      * MyBatis内容
      * @param employee
      */
