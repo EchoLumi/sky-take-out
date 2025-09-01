@@ -27,5 +27,10 @@ public interface EmployeeMapper {
             "values " +"(#{name},#{username},#{password},#{phone},#{sex},#{idNumber},#{status},#{createTime},#{updateTime},#{createUser},#{updateUser})")
     void insert(Employee employee);
 
+    /**
+     * 分页查询方法
+     * @param employeePageQueryDTO
+     * @return
+     */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 }

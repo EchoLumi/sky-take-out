@@ -26,6 +26,9 @@ import javax.swing.plaf.PanelUI;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * 接口实现类
+ */
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -98,13 +101,16 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param employeePageQueryDTO
      * @return
      */
-    public PageResult page(EmployeePageQueryDTO employeePageQueryDTO){
+    public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO){
         // select * from employee limit 0,10
         // 开始分页查询
+//        用PageHelper插件进行查询
         PageHelper.startPage(employeePageQueryDTO.getPage(),employeePageQueryDTO.getPageSize());
         Page<Employee> page = employeeMapper.pageQuery(employeePageQueryDTO);
+
         long total = page.getTotal();
         List<Employee> records = page.getResult();
+
         return new PageResult(total,records);
     }
 }

@@ -5,7 +5,8 @@
     <select id="pageQuery" resultType="com.sky.entity.Employee">
         select * from employee
         <where>
-            <if test="name != null and name = '' ">
+            <if test="name != null and name != '' ">
+--                 mySQL的concat函数进行动态拼接
                 and name like concat('%',#{name},'%')
             </if>
         </where>
