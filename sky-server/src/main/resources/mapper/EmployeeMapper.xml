@@ -6,7 +6,6 @@
         select * from employee
         <where>
             <if test="name != null and name != '' ">
---                 mySQL的concat函数进行动态拼接
                 and name like concat('%',#{name},'%')
             </if>
         </where>
