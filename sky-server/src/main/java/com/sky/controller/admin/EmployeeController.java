@@ -13,7 +13,8 @@ import com.sky.utils.JwtUtil;
 import com.sky.vo.EmployeeLoginVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.Generated;
+//import jdk.javadoc.internal.doclets.formats.html.PackageUseWriter;
+//import lombok.Generated;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -119,4 +120,16 @@ public class EmployeeController {
         return Result.success();
     }
 
+    /**
+     * 根据id来查询员工信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ApiOperation("根据id来查询员工信息")
+    // @PathVariable是获取参数
+    public Result<Employee> getById(@PathVariable Long id){
+        Employee employee = employeeService.getById(id);
+        return Result.success(employee);
+    }
 }
