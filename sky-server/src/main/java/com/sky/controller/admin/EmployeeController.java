@@ -138,8 +138,9 @@ public class EmployeeController {
      * @param employeeDTO
      * @return
      */
-    @GetMapping
+    @PutMapping
     @ApiOperation("编辑员工信息")
+    // 前端发送过来的是Json的数据
     public Result update(@RequestBody EmployeeDTO employeeDTO){
         log.info("编辑员工信息：{}",employeeDTO);
         employeeService.update(employeeDTO);

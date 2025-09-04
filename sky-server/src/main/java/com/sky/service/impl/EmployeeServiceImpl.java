@@ -143,12 +143,14 @@ public class EmployeeServiceImpl implements EmployeeService {
      *
      * @param employeeDTO
      */
-    @Override
     public void update(EmployeeDTO employeeDTO) {
+        // employee 当前为空
         Employee employee = new Employee();
-        // 属性拷贝到 employee
+         // 属性拷贝到 employee
         BeanUtils.copyProperties(employeeDTO,employee);
+        // 当前更新时间
         employee.setUpdateTime(LocalDateTime.now());
+
         employee.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.update(employee);
     }
