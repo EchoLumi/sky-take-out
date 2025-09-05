@@ -34,10 +34,10 @@ public class Employee implements Serializable {
     private Integer status;
     // 对日期进行格式化
     // 使用JsonFormat
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;
 
     private Long createUser;
