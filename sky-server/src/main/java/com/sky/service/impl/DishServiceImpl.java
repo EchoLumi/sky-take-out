@@ -25,8 +25,10 @@ public class DishServiceImpl implements DishService {
 
     @Autowired
     private DishMapper dishMapper;
+
     @Autowired
     private DishFlavorMapper dishFlavorMapper;
+
     /**
      * 新增菜品和对应的口味
      * @param dishDTO
@@ -51,6 +53,11 @@ public class DishServiceImpl implements DishService {
         }
     }
 
+    /**
+     * 菜品分页查询方法
+     * @param dishPageQueryDTO
+     * @return
+     */
     public PageResult pageQuery(DishPageQueryDTO dishPageQueryDTO){
         PageHelper.startPage(dishPageQueryDTO.getPage(),dishPageQueryDTO.getPageSize());
         Page<DishVO> page = dishMapper.PageQuery(dishPageQueryDTO);
