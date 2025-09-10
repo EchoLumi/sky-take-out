@@ -33,5 +33,5 @@ public interface DishMapper {
      * @param dishPageQueryDTO
      * @return
      */
-    Page<DishVO> PageQuery(DishPageQueryDTO dishPageQueryDTO);
+    Page<DishVO> pageQuery(DishPageQueryDTO dishPageQueryDTO);
 }
