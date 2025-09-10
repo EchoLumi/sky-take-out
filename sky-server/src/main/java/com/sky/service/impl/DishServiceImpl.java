@@ -63,4 +63,8 @@ public class DishServiceImpl implements DishService {
         Page<DishVO> page = dishMapper.pageQuery(dishPageQueryDTO);
         return new PageResult(page.getTotal(),page.getResult());
     }
+    // TODO 未完善
+    public void deleteBatch(List<Long> ids){
+
+    }
 }
