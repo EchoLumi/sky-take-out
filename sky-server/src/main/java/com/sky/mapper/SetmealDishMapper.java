@@ -8,8 +8,8 @@ import java.util.List;
 public interface SetmealDishMapper {
     /**
      * 根据菜品id查询对应的套餐
-     * @param dishiIds
+     * @param dishIds
      * @return
      */
-    List<Long> getSetmealIdsByDishIds(List<Long> dishiIds);
+    List<Long> getSetmealIdsByDishIds(List<Long> dishIds);
 }
