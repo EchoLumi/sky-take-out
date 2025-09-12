@@ -69,7 +69,7 @@ public class DishServiceImpl implements DishService {
         Page<DishVO> page = dishMapper.pageQuery(dishPageQueryDTO);
         return new PageResult(page.getTotal(),page.getResult());
     }
-
+    @Transactional
     public void deleteBatch(List<Long> ids){
         // 判断当前菜品是否能够删除——是否存在起售中的菜品？？
         for (Long id : ids){
@@ -87,9 +87,9 @@ public class DishServiceImpl implements DishService {
         }
         for (Long id: ids){
             // 删除菜品表中的菜品数据
-            dishMapper.deleteByIds(ids);
+            dishMapper.deleteById(id);
             // 删除菜品关联的口味数据
-            dishFlavorMapper.deleteByDishIds(ids);
+            dishFlavorMapper.deleteByDishId(id);
         }
     }
 }
