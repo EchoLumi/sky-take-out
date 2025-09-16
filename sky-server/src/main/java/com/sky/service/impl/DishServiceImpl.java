@@ -101,6 +101,7 @@ public class DishServiceImpl implements DishService {
 
         // 将查询的数据封装到VO
         DishVO dishVO = new DishVO();
+        // 对象拷贝
         BeanUtils.copyProperties(dish,dishVO);
         dishVO.setFlavors(dishFlavors);
         return dishVO;
