@@ -92,6 +92,12 @@ public class DishServiceImpl implements DishService {
             dishFlavorMapper.deleteByDishId(id);
         }
     }
+
+    /**
+     * 根据id来查询菜品数据
+     * @param id
+     * @return
+     */
     public DishVO getByIdWithFlavor(Long id){
         // 根据id来查询菜品数据
         Dish dish = dishMapper.getById(id);
