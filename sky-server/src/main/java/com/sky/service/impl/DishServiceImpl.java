@@ -121,9 +121,9 @@ public class DishServiceImpl implements DishService {
 //        修改菜品表
         Dish dish = new Dish();
         BeanUtils.copyProperties(dishDTO,dish);
-        dishMapper.update(dishDTO);
+        dishMapper.update(dish);
 //        删除原有的口味数据
-        dishMapper.deleteById(dishDTO.getId());
+        dishFlavorMapper.deleteByDishId(dishDTO.getId());
 //        重新插入口味数据
         List<DishFlavor> flavors = dishDTO.getFlavors();
         // 判断一下条件
