@@ -6,9 +6,14 @@ sky:
     database: sky_take_out
     username: root
     password: 123456
-  # TODO 未添加OSS对象云存储
+  # 添加OSS对象云存储
   alioss:
     endpoint:
     access-key-id:
     access-key-secret:
     bucket-name:
+  redis:
+    host: localhost
+    port: 6739
+    database: 0
+
