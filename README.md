@@ -4,9 +4,6 @@
 前端url地址：http://localhost:8081/#/login
 前端端口：8081
 后端端口：8080
-
-管理端页面已经打包好，在sky-ui-nginx 里面，启动反向代理就可以访问
-
 ## 所用技术栈
 1. SpringBoot
 2. Redis
